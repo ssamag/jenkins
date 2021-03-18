@@ -23,4 +23,7 @@ job('NodeJS Docker example') {
             skipDecorate()
         }
     }
+    configure { project ->
+    project / 'builders' / 'com.cloudbees.dockerpublish.DockerBuilder' << 'dockerToolName'('Docker')
+	}
 }
